@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	.container
+		h1 Applicants
+		ul#applications.list-unstyled
+			div Applicants should go here.
+				for applicant in prospects
+					li.applicant-info
+						div.name #{applicant.name}
+						div.bio #{applicant.bio}
+						div.skills #{applicant.skills}
+						div.years #{applicant.years}
+						div.why #{applicant.why}
+						//- button.deleteButton Delete User
+						a(href="/delete/#{applicant._id}") delete user
+
+
+block scripts
+	script(src='/javascripts/main.js')
